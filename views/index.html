@@ -1,9 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+
+
+
+      <!-- <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="/socket.io/socket.io.js" defer></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="https://vuejs.org/js/vue.js"defer></script>
+      <script type="text/javascript" src="js/menu.js"></script>
+      <script src="/vue/vue.js" defer></script>
+      <script src="js/vue_script.js"defer></script>
+      <script src="js/script.js" defer></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
+      <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="css/deli-very.css">
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="https://vuejs.org/js/vue.js"defer></script>
+        <script src="js/js_script.js" defer></script>
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/vue_script.js" defer></script>
+
+        <title>BurgerORD</title>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+
+     <main id="menu">
+    <section id="firstsection" >
+        <header id="header">
+
+           <img id="headerbild" src="img\header.jpg">
+          <h1 id="huvudtext"> Välkommen till BurgerOnline</h1>
+         </header>
+
+           <h2>Vilken burgare vill du äta idag?</h2>
+              <p>Här väljer du burgare</p>
+    <div class="burgertable">
+      <div v-for = "burg in Burgers">
+       <div class = "burgerHeader"> {{burg.name}} </div>
+       <img v-bind:src='burg.pic' width="250" height="180"> <br>
+        <ul>
+           <li> {{burg.kcal}} Kcal </li>
+           <li v-if=burg.gluten> Contains gluten  </li>
+           <li v-if=burg.lactose> Contains lactose </li>
+           <li v-if=burg.veg>  Vegan </li>
+           <input type="checkbox" id="burg.name" v-bind:value="burg.name" v-model="chosenburg">
+           <label for=burg.name>{{burg.name}}</label>
+
+       </ul>
+       </div>
+       </div>
+
+
+     </section>
+     <section id="cssstil">
+        <section id="levupp">
+           <h3> Kunduppgifter </h3>
+              <p> Detta måste vi veta om dig! </p>
+
+
+           <h4> Leveransuppgifter </h4>
+        <form>
+          <p>
+            <label for="Förnamn"> Förnamn </label> <br>
+            <input type="text" v-model="Förnamn" name="fn" required="required" placeholder="Firstname" >
+           </p>
+          <p>
+            <label for="Efternamn"> Efternamn </label> <br>
+            <input type="text" v-model="Efternamn" name="ln" required="required" placeholder="Lastname" >
+          </p>
+
+
+          <!-- <p>
+            <label> Adress </label> <br>
+            <input type="text" v-model="Adress" required="required" placeholder="Leveransadress">
+          </p> -->
+
+          <p>
+            <label> Telefonnummer </label> <br>
+            <input type="number" v-model="Telefonnummer" required="required" placeholder="Telefonnummer">
+          </p>
+
+          <p>
+            <label> Email </label> <br>
+            <input type="email" v-model="Email" required="required" placeholder="Emailadress">
+          </p>
+
+          <h3> Välj leveransadress i kartan! </h3>
+        
+          <div class="view-box">
+            <div id="dots" v-on:click="displayOrder">
+                <div
+                  v-bind:style="{ left:details.x + 'px', top: details.y + 'px'}">
+                  T
+                </div>
+            </div>
+          </div>
+
+          <p>
+            <label for="betalningsalternativ"> Betalningsalternativ </label> <br>
+            <select v-model="betalningsalternativ">
+              <option> Kortbetalning </option>
+              <option> Klarna </option>
+              <option> Faktura </option>
+              <option> Paypal </option>
+            </select>
+          </p>
+
+        <p>
+
+          <label for="gender"> Kön </label> <br>
+
+          <input type="radio" name="kn" value="Man" v-model="gender"> Man <br>
+          <input type="radio"  name="kn" value="Kvinna" v-model="gender"> Kvinna <br>
+          <input type="radio"  name="kn" value="Annat"  v-model="gender" > Annat <br>
+
+      </p>
+    </form>
+</section>
+
+
+    <section>
+       <button v-on:click="addOrder" type="submit"> Lägg din order </button>
+       <!-- <pre class="orderedItems" id="orderMenu" v-bind="orderList">{{orderList}}</pre> -->
+    <!-- <div id="orders" style:"display.none";> -->
+      <h4> Beställningsinformation:</h4>
+
+      <pre> {{klarOrder}}</pre>
+
+
+      <!-- <div v-for="burg in chosenburg"> Order:{{burg}}</div>
+
+      Namn:{{Förnamn}} {{Efternamn}}<br>
+      E-mail:{{Email}} <br>
+      Telefonnummer:{{Telefonnummer}} <br>
+      Betalningsmetod: {{betalningsalternativ}} <br>
+      Kön: {{gender}} <br>
+
+
+    </div> -->
+  </section>
+
+
+
+
+
+
+
+</section>
+</main>
+
+    <hr>
+        <footer>
+        <p> Copyright SoufBurgers </p>
+       </footer>
     </body>
 </html>
+<!--comment-->
