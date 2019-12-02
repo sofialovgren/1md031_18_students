@@ -1,0 +1,116 @@
+/*Stylesheet index*/
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+body {
+
+  font-family:Arial, sans-serif;
+  /*font-weight: lighter;*/
+  font-size: 1.1em;
+
+}
+
+.burgertable {
+  display: grid;
+  gtid-gap:10px;
+  grid-template-columns: repeat(auto-fill,20em);
+
+  background-color: #fff
+  color:#444
+
+}
+
+.burgerHeader{
+  font-weight: bold;
+}
+
+.box{
+  background-color: #444;
+  color:#fff;
+  border-radius: 5px;
+  padding:20px;
+  font-size: 150%;
+}
+
+.burger_Bebacon {
+  font-weight: bold;
+  grid-column: 1 / span 3;
+}
+.burger_tjiknpinat{
+  font-weight: bold;
+  grid-column: 17/ span 2;
+}
+
+.burger_vegobego{
+  font-weight: bold;
+  grid-column: 30/ span 2;
+
+}
+
+
+#header{
+height: 10em;
+overflow:hidden;
+}
+
+#huvudtext{
+position: absolute;
+
+color:black;
+padding-left: 3.5em;
+margin-top: -5em;
+font-size: 3em;
+color:white;
+}
+
+#headerbild{
+width:100%;
+opacity:0.6;
+height: auto;
+
+}
+
+
+
+#firstsection{
+  margin:20px;
+  padding:1em;
+  border:5px solid;
+  border-radius: 10px;
+  background-color: black;
+  color:white;
+
+}
+
+#cssstil{
+  margin:20px;
+  color:black;
+  border:5px dotted;
+  border-radius:5px;
+  padding:1em;
+
+}
+
+#burgertable{
+  background-color:black;
+  color:white;
+  width:100%;
+  text-align: center;
+}
+
+
+#allergi{
+text-align: left;
+
+
+}
+
+
+
+button:hover{
+  background-color:blue;
+
+
+}
+#formknapp {
+  width:100px;
+  margin-bottom: 50px;
+}
